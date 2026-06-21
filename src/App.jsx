@@ -4,6 +4,8 @@ import UseEffectDemo from './hooks-demo/UseEffectDemo'
 import UseContextDemo from './hooks-demo/UseContextDemo'
 import UseMemoDemo from './hooks-demo/UseMemoDemo'
 import UseCallbackDemo from './hooks-demo/UseCallbackDemo'
+import UseRefDemo from './hooks-demo/UseRefDemo'
+import UseImperativeHandleDemo from './hooks-demo/useImperativeHandleDemo'
 
 function App() {
 
@@ -21,6 +23,10 @@ function App() {
       <UseMemoDemo/>
       <hr/>
       <UseCallbackDemo/>
+      <hr/>
+      <UseRefDemo />
+      <hr/>
+      <UseImperativeHandleDemo/>
     </div>
   )
 }
