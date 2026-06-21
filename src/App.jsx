@@ -9,6 +9,10 @@ import UseImperativeHandleDemo from './hooks-demo/useImperativeHandleDemo'
 import UseReducerDemo from './hooks-demo/UseReducerDemo'
 import { Effect } from './hooks-demo/Effect'
 import EventHandling from './events/EventHandling'
+import Form from './forms/Form'
+import Dashboard from './contextAPI/Dashboard'
+import UserPostListFetch from './API-calls/UserPostListFetch'
+import UserPostListAxios from './API-calls/UserPostListAxios'
 
 function App() {
 
@@ -16,7 +20,14 @@ function App() {
     < div className="container">
 
       <h1 className='text-primary fs-3 bold'> React Learning</h1>
+      <Dashboard/>
+      <UserPostListAxios/>
+      {/* <UserPostListFetch/> */}
+      <hr/>
+      <Form/>
+      <hr/>
       <h3>EventHandling</h3>
+
       <EventHandling />
       <hr />
       <h3> Hooks</h3>
