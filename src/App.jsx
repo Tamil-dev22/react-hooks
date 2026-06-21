@@ -8,31 +8,36 @@ import UseRefDemo from './hooks-demo/UseRefDemo'
 import UseImperativeHandleDemo from './hooks-demo/useImperativeHandleDemo'
 import UseReducerDemo from './hooks-demo/UseReducerDemo'
 import { Effect } from './hooks-demo/Effect'
+import EventHandling from './events/EventHandling'
 
 function App() {
 
   return (
     < div className="container">
+
       <h1 className='text-primary fs-3 bold'> React Learning</h1>
+      <h3>EventHandling</h3>
+      <EventHandling />
+      <hr />
       <h3> Hooks</h3>
       <hr />
       <UseStateDemo />
       <hr />
       <UseEffectDemo />
       <hr />
-      <UseContextDemo/>
-      <hr/>
-      <UseMemoDemo/>
-      <hr/>
-      <UseCallbackDemo/>
-      <hr/>
+      <UseContextDemo />
+      <hr />
+      <UseMemoDemo />
+      <hr />
+      <UseCallbackDemo />
+      <hr />
       <UseRefDemo />
-      <hr/>
-      <UseImperativeHandleDemo/>
-      <hr/>
-      <UseReducerDemo/>
-      <hr/>
-      <Effect/>
+      <hr />
+      <UseImperativeHandleDemo />
+      <hr />
+      <UseReducerDemo />
+      <hr />
+      <Effect />
     </div>
   )
 }
