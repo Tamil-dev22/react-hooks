@@ -24,7 +24,7 @@ function UserPostListAxios() {
 
   const getPosts = () => {
     axios
-      .get("https://jsonplaceholder.typicode.com/postadsddasdasdasdass")
+      .get("https://jsonplaceholder.typicode.com/posts")
       .then((response) => {
         setPosts(response.data.slice(0, 5));
       })

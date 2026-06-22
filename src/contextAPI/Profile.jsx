@@ -5,7 +5,8 @@ const Profile = () => {
 const user = useContext(UserContext)
   return (
     <>
-{user.name}
+    profile
+   {/* {user.name} */}
     </>
   )
 }

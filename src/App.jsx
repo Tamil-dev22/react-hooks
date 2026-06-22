@@ -1,56 +1,73 @@
-import UseStateDemo from './hooks-demo/UseStateDemo'
-import './App.css'
-import UseEffectDemo from './hooks-demo/UseEffectDemo'
-import UseContextDemo from './hooks-demo/UseContextDemo'
-import UseMemoDemo from './hooks-demo/UseMemoDemo'
-import UseCallbackDemo from './hooks-demo/UseCallbackDemo'
-import UseRefDemo from './hooks-demo/UseRefDemo'
-import UseImperativeHandleDemo from './hooks-demo/useImperativeHandleDemo'
-import UseReducerDemo from './hooks-demo/UseReducerDemo'
-import { Effect } from './hooks-demo/Effect'
-import EventHandling from './events/EventHandling'
-import Form from './forms/Form'
-import Dashboard from './contextAPI/Dashboard'
-import UserPostListFetch from './API-calls/UserPostListFetch'
-import UserPostListAxios from './API-calls/UserPostListAxios'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Navbar from "./components/Navbar";
+import User from "./pages/User";
+import Dashboard from "./contextAPI/Dashboard";
+import Profile from "./contextAPI/Profile";
+const routes = [
+  {
+    path: "/",
+    element: <Home />,
+    name: "Home",
+  },
+  {
+    path: "/about",
+    element: <About />,
+    name: "About",
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+    name: "Contact",
+  },
+  {
+    path: "/user/:id",
+    element: <User />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+    children: [
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+    ],
+  },
+];
 
 function App() {
-
   return (
-    < div className="container">
+    <BrowserRouter>
 
-      <h1 className='text-primary fs-3 bold'> React Learning</h1>
-      <Dashboard/>
-      <UserPostListAxios/>
-      {/* <UserPostListFetch/> */}
-      <hr/>
-      <Form/>
-      <hr/>
-      <h3>EventHandling</h3>
-
-      <EventHandling />
-      <hr />
-      <h3> Hooks</h3>
-      <hr />
-      <UseStateDemo />
-      <hr />
-      <UseEffectDemo />
-      <hr />
-      <UseContextDemo />
-      <hr />
-      <UseMemoDemo />
-      <hr />
-      <UseCallbackDemo />
-      <hr />
-      <UseRefDemo />
-      <hr />
-      <UseImperativeHandleDemo />
-      <hr />
-      <UseReducerDemo />
-      <hr />
-      <Effect />
-    </div>
-  )
+      <Navbar />
+      <Routes>
+        {routes.map((route) => (
+          <Route
+            key={route.path}
+            path={route.path}
+            element={route.element}
+          >
+            {route.children?.map((child) => (
+              <Route
+                key={child.path}
+                path={child.path}
+                element={child.element}
+              />
+            ))}
+          </Route>
+        ))}
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

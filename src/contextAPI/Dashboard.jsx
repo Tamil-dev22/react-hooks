@@ -1,5 +1,6 @@
 import React, { createContext } from 'react'
 import Profile from './Profile';
+import { Outlet } from 'react-router-dom';
 
 export const UserContext = createContext();
 
@@ -10,10 +11,10 @@ const Dashboard = () => {
     }
   return (
     <>
-    <UserContext.Provider value={user}>
-        <Profile/>
-    </UserContext.Provider>
-    
+    {/* <UserContext.Provider value={user}> */}
+       asdaskdlasdklasdlasndlkasnd
+    {/* </UserContext.Provider> */}
+    <Outlet/>
     </>
   )
 }
